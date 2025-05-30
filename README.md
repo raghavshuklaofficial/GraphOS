@@ -1,8 +1,6 @@
----
 # 🧠 **GraphOS: Minimal Ring 0 Operating System**
 
 **GraphOS** is a **bare-metal 32-bit operating system** built from scratch using **x86 Assembly** and **C**, designed for educational purposes. It provides a foundational understanding of low-level OS concepts, including bootloading, kernel development, and hardware interfacing.
----
 ---
 
 ## 📦 **Features**
