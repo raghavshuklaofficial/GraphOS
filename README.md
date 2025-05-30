@@ -31,5 +31,3 @@ Inspired by Terry A. Davis : Temple OS(in memoriam).
 ## Contributors
 
 ##### Raghav Shukla (https://github.com/raghavshuklaofficial)
-##### Jalaj Goel
-##### Aditya Modi
