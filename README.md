@@ -4,13 +4,13 @@
 
 ## 📦 **Features**
 
-| **Feature**          | **Icon** | **Details**                                       |
-| -------------------- | -------- | ------------------------------------------------- |
-| Ring 0 Execution     | 🛡️      | Operates in kernel mode for full hardware access  |
-| Custom Bootloader    | 🧱       | Written in Assembly to initialize the system      |
-| Freestanding Kernel  | ⚙️       | Developed in C without standard libraries         |
-| ISO Image Generation | 💿       | Creates bootable ISO using `xorriso` and `mtools` |
-| QEMU Virtualization  | 🖥️      | Supports testing via QEMU emulator                |
+| **Feature**                    | **Details**                                       |
+| -------------------------------| ------------------------------------------------- |
+| Ring 0 Execution      🛡️       | Operates in kernel mode for full hardware access  |
+| Custom Bootloader     🧱       | Written in Assembly to initialize the system      |
+| Freestanding Kernel   ⚙️       | Developed in C without standard libraries         |
+| ISO Image Generation  💿       | Creates bootable ISO using `xorriso` and `mtools` |
+| QEMU Virtualization   🖥️       | Supports testing via QEMU emulator                |
 
 ---
 
