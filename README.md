@@ -18,15 +18,61 @@
 
 ```plaintext
 GraphOS/
-├── Bootloader/           # Assembly code for bootloading
-├── include/              # Header files for kernel
-├── src/                  # Kernel source code in C
-├── start.asm             # Entry point in Assembly
-├── Makefile              # Build automation script
-├── graphos.iso           # Generated bootable ISO image
-├── graphos.bin           # Compiled binary
-├── update_version.c      # Version management script
-└── README.md             # Project documentation
+├── Bootloader/                 # Contains the low-level boot code
+│   └── Bootloader.asm          # The primary 16-bit x86 Assembly code for the boot sector.
+├── include/                    # Directory for kernel header files (.h)
+│   ├── bool.h                  # Definitions for boolean type and true/false macros.
+│   ├── calculator.h            # Header for simple calculator functionalities.
+│   ├── crypto.h                # Common cryptographic utility definitions (e.g., bitwise operations).
+│   ├── easter.h                # Declarations for "easter egg" functions.
+│   ├── io.h                    # Input/Output functions for hardware interaction (e.g., keyboard, VGA).
+│   ├── kbd.h                   # Keyboard definitions, scan codes, and key maps.
+│   ├── limits.h                # Defines integer limits and floating-point epsilon (EPS).
+│   ├── math.h                  # Mathematical function declarations (e.g., sin, cos, sqrt, pow).
+│   ├── math_shell.h            # Header for mathematical shell command parsing and execution.
+│   ├── memory.h                # Memory management (heap) structures and function declarations.
+│   ├── parsing.h               # Utilities for parsing strings, integers, and floats.
+│   ├── random.h                # Pseudo-random number generation functions.
+│   ├── sha224.h                # SHA-224 hashing function declaration.
+│   ├── sha256.h                # SHA-256 hashing function declaration.
+│   ├── shell_history.h         # Data structures and functions for command history.
+│   ├── sleep.h                 # Declaration for the sleep function.
+│   ├── string.h                # String manipulation functions (e.g., strlen, strcpy, atoi, ftoa).
+│   ├── thread.h                # (Empty) Placeholder for potential threading functionalities.
+│   ├── time.h                  # Functions for interacting with the Real-Time Clock (RTC).
+│   ├── tty.h                   # Terminal (TTY) definitions, VGA driver, and printk function.
+│   ├── utils.h                 # General utility functions (e.g., print_logo, about).
+│   └── version.h               # Defines the current version numbers of GraphOS.
+├── src/                        # Contains the main kernel source code (.c and .s)
+│   ├── calculator.c            # Implements basic arithmetic operations and a stack-based calculator.
+│   ├── crypto.c                # Core cryptographic utilities (e.g., bitwise rotations, concatenation).
+│   ├── easter.c                # Implementations of the "easter egg" responses.
+│   ├── io.c                    # Implementations for input/output operations (e.g., shutdown, reboot, keyboard scan).
+│   ├── kernel.c                # The main entry point of the 32-bit kernel, handling shell logic and command dispatch.
+│   ├── loader.s                # Assembly code for initial kernel loading and setup (stack, calling main).
+│   ├── math.c                  # Implementations of various mathematical functions (e.g., sin, cos, sqrt, exp, log).
+│   ├── math_shell.c            # Implements the logic for mathematical shell commands.
+│   ├── memory.c                # Heap memory allocator implementation (kmalloc, kfree).
+│   ├── parsing.c               # Implementations for string, integer, and float parsing.
+│   ├── random.c                # Pseudo-random number generator implementation.
+│   ├── sha224.c                # Implements the SHA-224 hashing algorithm.
+│   ├── sha256.c                # Implements the SHA-256 hashing algorithm.
+│   ├── shell_history.c         # Functions for managing the command history linked list.
+│   ├── string.c                # Implementations of various string manipulation functions (e.g., strlen, strcmp, atoi, ftoa).
+│   ├── time.c                  # Functions for reading and displaying time and date from the RTC.
+│   ├── tty.c                   # Terminal driver implementation, including screen initialization and character output.
+│   └── utils.c                 # Implementations of general utility functions like `print_logo` and `about`.
+├── .gitignore                  # Git configuration file to ignore generated binaries and temporary files.
+├── current_version.txt         # Text file storing the current version of the OS, read by `update_version.c`.
+├── start.asm                   # The main 32-bit Assembly entry point for the kernel after the bootloader, sets up stack and calls C main.
+├── Makefile                    # The build automation script for compiling, linking, and creating the ISO.
+├── update_version.c            # A C utility to read and increment the version number, then update `include/version.h`.
+├── README.md                   # Comprehensive project documentation, build instructions, and overview.
+└── LICENSE                     # The MIT License file, detailing terms of use and distribution.
+
+# Generated artifacts (not part of the source structure, but created by the build process):
+# ├── graphos.iso               # The final bootable ISO image.
+# └── graphos.bin               # The combined bootloader and kernel binary.
 ```
 
 ---
