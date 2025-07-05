@@ -131,6 +131,8 @@ Upon booting, you should see a simple "Hello, World!" message, indicating succes
 
 **Raghav Shukla**
 📌 [GitHub Profile](https://github.com/raghavshuklaofficial)
+**Aditya Modi**
+**Jalaj Goel**
 
 ---
 
